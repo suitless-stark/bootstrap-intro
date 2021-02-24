@@ -23,6 +23,17 @@
       height: auto;
       background-color: lavender;
     }
+
+    .card-a {
+      overflow: hidden;
+      transition-duration: 2s;
+      transition-property: transform;
+    }
+
+    .spin-time {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+    }
   </style>
 
   <title>Introduction to BootStrap</title>
@@ -30,6 +41,7 @@
 
 <body>
   <div class="container">
+    <h1>BootStrap Introduction</h1>
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
@@ -64,12 +76,12 @@
           <div class="accordion-body">
             <div class="row">
               <div class="col-3 b">
-                <div class="card" style="width: 18rem;">
+                <div class="card card-a" style="width: 18rem;">
                   <img src="img/part1.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">DEADPOOL</h5>
                     <p class="card-text">Deadpool (born Wade Winston Wilson) is a Canadian freelance mercenary who became a superhuman with a regenerative healing factor from the Mutant Workshop program.</p>
-                    <a href="https://xmenmovies.fandom.com/wiki/Deadpool" class="btn btn-primary" target="_blank">Read More</a>
+                    <a class="btn btn-primary" id="btnA" target="_blank">Read More</a>
                   </div>
                 </div>
               </div>
@@ -81,7 +93,7 @@
                     <p class="card-text">Thanos was one of the last sons of A'Lars, progenitor of the second colony of Eternals on Titan, and Sui-San, the last survivor of the original settlement of Eternals in this moon. He was born with purple,
                       hide-like
                       skin and a massive body due to his Deviant Syndrome. The very first time his mother laid her eyes on the baby, she was driven mad and tried to kill him.</p>
-                    <a href="https://marvel.fandom.com/wiki/Thanos_(Earth-616)" class="btn btn-primary" target="_blank">Read More</a>
+                    <a class="btn btn-primary" id="btnB" target="_blank">Read More</a>
                   </div>
                 </div>
               </div>
@@ -118,6 +130,18 @@
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript">
+    $('document').ready(function() {
+      $('#btnA').click(function() {
+        $('.card-a').addClass('spin-time')
+      });
+
+      $('#btnB').click(function() {
+        $('.col-2').css('background-color', 'lime');
+      });
+    });
+  </script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
